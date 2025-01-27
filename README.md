@@ -34,6 +34,18 @@
 ├── 02-workflow-orchestration/
 │   ├── homework/
 │   └── kestra-demos/
+├── 03-data-warehouse/
+│   ├── homework/
+│   └── notes.md
+├── 04-analytics-engineering/
+│   ├── homework/
+│   └── notes.md
+├── 05-batch/
+│   ├── homework/
+│   └── notes.md
+├── 06-streaming/
+│   ├── homework/
+│   └── notes.md
 ├── workshops/
 │   └── data-ingestion/
 ├── projects/
@@ -49,15 +61,15 @@
 
 ## 🏆 Progress Tracker
 
-| Module                          | Status | Completion Date | Notes                                  |
-|---------------------------------|--------|-----------------|----------------------------------------|
-| 1. Containerization & IaC       | ✅     | 2025-01-20      | [Homework](01-docker-terraform/homework) |
-| 2. Workflow Orchestration       | 🟡     | -               | In Progress                            |
-| 3. Data Warehouse               | ❌     | -               | Upcoming                               |
-| 4. Analytics Engineering         | ❌     | -               | Not Started                            |
-| 5. Batch Processing             | ❌     | -               | Not Started                            |
-| 6. Streaming                    | ❌     | -               | Not Started                            |
-| Final Project                   | ❌     | -               | Not Started                            |
+| Module                    | Status | Completion Date | Notes                                    |
+| ------------------------- | ------ | --------------- | ---------------------------------------- |
+| 1. Containerization & IaC | ✅      | 2025-01-20      | [Homework](01-docker-terraform/homework) |
+| 2. Workflow Orchestration | 🟡      | -               | In Progress                              |
+| 3. Data Warehouse         | ❌      | -               | Upcoming                                 |
+| 4. Analytics Engineering  | ❌      | -               | Not Started                              |
+| 5. Batch Processing       | ❌      | -               | Not Started                              |
+| 6. Streaming              | ❌      | -               | Not Started                              |
+| Final Project             | ❌      | -               | Not Started                              |
 
 ---
 
