@@ -1,9 +1,8 @@
-## Docker and SQL
+# Docker and SQL
 
 Notes I used for preparing the videos: [link](https://docs.google.com/document/d/e/2PACX-1vRJUuGfzgIdbkalPgg2nQ884CnZkCg314T_OBq-_hfcowPxNIA0-z5OtMTDzuzute9VBHMjNYZFTCc1/pub)
 
-
-## Commands 
+## Commands
 
 All the commands from the video
 
@@ -33,7 +32,7 @@ docker run -it \
 
 If you have the following error:
 
-```
+```docker
 docker run -it \
   -e POSTGRES_USER="root" \
   -e POSTGRES_PASSWORD="root" \
@@ -48,7 +47,7 @@ See 'docker run --help'.
 
 Change the mounting path. Replace it with the following:
 
-```
+```bash
 -v /e/zoomcamp/...:/var/lib/postgresql/data
 ```
 
@@ -69,7 +68,6 @@ the container, try these:
 
 * Deleting the folder and running Docker again (Docker will re-create the folder)
 * Adjust the permissions of the folder by running `sudo chmod a+rwx ny_taxi_postgres_data`
-
 
 ### CLI for Postgres
 
@@ -96,16 +94,16 @@ pgcli -h localhost -p 5432 -u root -d ny_taxi
 
 Dataset:
 
-* https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
-* https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf
+* <https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page>
+* <https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf>
 
 > According to the [TLC data website](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page),
 > from 05/13/2022, the data will be in ```.parquet``` format instead of ```.csv```
 > The website has provided a useful [link](https://www1.nyc.gov/assets/tlc/downloads/pdf/working_parquet_format.pdf) with sample steps to read ```.parquet``` file and convert it to Pandas data frame.
 >
-> You can use the csv backup located here, https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz, to follow along with the video.
+> You can use the csv backup located here, <https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz>, to follow along with the video.
 
-```
+```bash
 $ aws s3 ls s3://nyc-tlc
                            PRE csv_backup/
                            PRE misc/
@@ -186,7 +184,7 @@ docker build -t taxi_ingest:v001 .
 
 On Linux you may have a problem building it:
 
-```
+```bash
 error checking context: 'can't stat '/home/name/data_engineering/ny_taxi_postgres_data''.
 ```
 
@@ -196,7 +194,7 @@ You can solve it with `.dockerignore`:
 * Move `ny_taxi_postgres_data` to `data` (you might need to use `sudo` for that)
 * Map `-v $(pwd)/data/ny_taxi_postgres_data:/var/lib/postgresql/data`
 * Create a file `.dockerignore` and add `data` there
-* Check [this video](https://www.youtube.com/watch?v=tOr4hTsHOzU&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb) (the middle) for more details 
+* Check [this video](https://www.youtube.com/watch?v=tOr4hTsHOzU&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb) (the middle) for more details
 
 Run the script with Docker
 
@@ -215,7 +213,7 @@ docker run -it \
     --url=${URL}
 ```
 
-### Docker-Compose 
+### Docker-Compose
 
 Run it:
 
@@ -252,7 +250,6 @@ services:
     ...
 ```
 
-
 ### SQL Refresher
 
 Pre-Requisites: If you followed the course through with the given order,
@@ -273,13 +270,13 @@ df_zones = pd.read_csv("taxi_zone_lookup.csv")
 df_zones.to_sql(name='zones', con=engine, if_exists='replace')
 ```
 
-Once done, you can go to http://localhost:8080/browser/ to access pgAdmin.
+Once done, you can go to <http://localhost:8080/browser/> to access pgAdmin.
 Don't forget to Right Click on the server or database to refresh it in case you don't see the new table.
 
 Now start querying!
 
 Joining Yellow Taxi table with Zones Lookup table (implicit INNER JOIN)
- 
+
 ```sql
 SELECT
     tpep_pickup_datetime,
@@ -463,7 +460,6 @@ LIMIT 100;
 ```
 
 Grouping by multiple fields
-
 
 ```sql
 SELECT
