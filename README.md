@@ -63,7 +63,7 @@
 
 | Module                    | Status | Completion Date | Notes                                    |
 | ------------------------- | ------ | --------------- | ---------------------------------------- |
-| 1. Containerization & IaC | ✅      | 2025-01-20      | [Homework](01-docker-terraform/homework) |
+| 1. Containerization & IaC | ✅      | 2025-01-27      | [Homework](01-docker-terraform/homework) |
 | 2. Workflow Orchestration | 🟡      | -               | In Progress                              |
 | 3. Data Warehouse         | ❌      | -               | Upcoming                                 |
 | 4. Analytics Engineering  | ❌      | -               | Not Started                              |
